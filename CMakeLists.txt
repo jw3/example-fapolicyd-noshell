@@ -10,3 +10,16 @@ set_target_properties(boo_lib PROPERTIES OUTPUT_NAME boo)
 # main
 add_executable(boo main.cpp)
 target_link_libraries(boo boo_lib)
+install(TARGETS boo boo_lib RUNTIME DESTINATION bin LIBRARY DESTINATION  lib)
+
+# support
+install(FILES boo.conf DESTINATION config)
+
+# rpm
+set(CPACK_RPM_COMPONENT_INSTALL ON)
+set(CPACK_PACKAGE_NAME fapolicyd-deny-shell)
+set(CPACK_INSTALL_PREFIX /usr/local/boo)
+set(CPACK_RPM_PACKAGE_GROUP examples)
+set(CPACK_SET_DESTDIR ON)
+set(CPACK_RPM_PACKAGE_AUTOREQPROV no)
+include(CPack)
