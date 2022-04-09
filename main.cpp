@@ -15,7 +15,7 @@ int main(int c, char** v) {
 
    // but creating a shell is not ok
    ec = with_shell(shell.c_str());
-   std::cout << "calling a shell is" << (ec ? " not " : " ") << "ok" << std::endl;
+   std::cout << "summoning a shell is" << (ec ? " not " : " ") << "ok" << std::endl;
 
    return ec;
 }

@@ -9,9 +9,9 @@ allow_syslog perm=open gid=10001 : path=/usr/local/boo/lib/libboo.so
 allow_syslog perm=open gid=10001 : path=/usr/local/boo/config/boo.conf
 
 # also allow system library access
-allow_syslog perm=any  gid=10001 : path=/usr/lib64/ld-2.33.so
-allow_syslog perm=open gid=10001 : path=/etc/ld.so.cache
-allow_syslog perm=open gid=10001 : ftype=application/x-sharedlib trust=1
+allow_syslog perm=open     gid=10001 : ftype=application/x-sharedlib trust=1
+allow_syslog perm=execute  gid=10001 : path=/usr/lib64/ld-2.33.so
+allow_syslog perm=open     gid=10001 : path=/etc/ld.so.cache
 
 # deny everything else for the target group
 deny_syslog perm=any gid=10001 : all
