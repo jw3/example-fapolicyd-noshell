@@ -1,6 +1,18 @@
 example fapolicyd blocking shell
 ===
 
+Demonstrates an application installed to a directory in `/usr/local/boo` that has `bin`, `lib`, and `config` subdirs.  
+
+The binary under `bin` loads the conf under `config` and calls into a shared library under `lib`.
+
+Two library functions are demonstrated:
+1. function with no external calls
+2. function that attempts to start a shell with a `system` call
+
+The included `fapolicyd.rules` file demonstrate that fapolicyd can be configured to allow the library and config to be accessed while blocking the shell execution.
+
+The demonstration is packaged into a RPM and has been tested on FC34. 
+
 ## warning: this demo will overwrite your fapolicyd.rules file
 
 ## setup 
