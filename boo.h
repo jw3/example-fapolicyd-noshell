@@ -1,4 +1,4 @@
 #pragma once
 
-int ok(const char*);
-int err(const char*);
+int no_shell();
+int with_shell(const char*);

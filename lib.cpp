@@ -1,10 +1,10 @@
 #include <cstdlib>
 #include "boo.h"
 
-int ok(const char* cmd) {
+int no_shell() {
    return 0;
 }
 
-int err(const char* cmd) {
+int with_shell(const char* cmd) {
    return system(cmd);
 }

@@ -10,11 +10,11 @@ int main(int c, char** v) {
    in >> shell;
 
    // it is ok to call into the lib
-   int ec = ok(shell.c_str());
+   int ec = no_shell();
    std::cout << "calling into the lib is" << (ec ? " not " : " ") << "ok" << std::endl;
 
    // but creating a shell is not ok
-   ec = err(shell.c_str());
+   ec = with_shell(shell.c_str());
    std::cout << "calling a shell is" << (ec ? " not " : " ") << "ok" << std::endl;
 
    return ec;
