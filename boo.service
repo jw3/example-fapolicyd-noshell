@@ -1,0 +1,12 @@
+[Unit]
+Description=Boo!
+
+[Service]
+Type=oneshot
+RemainAfterExit=no
+ExecStart=/usr/local/boo/bin/boo
+Environment="LD_LIBRARY_PATH=/usr/local/boo/lib"
+Group=10001
+
+[Install]
+WantedBy=multi-user.target
