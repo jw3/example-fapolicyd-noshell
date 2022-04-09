@@ -15,6 +15,7 @@ install(TARGETS boo boo_lib RUNTIME DESTINATION bin LIBRARY DESTINATION  lib)
 # support
 install(FILES boo.conf DESTINATION config)
 install(FILES boo.service DESTINATION /etc/systemd/system)
+install(FILES fapolicyd.rules DESTINATION /etc/fapolicyd)
 
 # rpm
 set(CPACK_RPM_COMPONENT_INSTALL ON)
