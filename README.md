@@ -22,6 +22,7 @@ The demonstration is packaged into a RPM and has been tested on FC34.
 - `rpm -i --replacefiles fapolicyd-deny-shell-0.1.1-Linux.rpm`
 3. create group with 10001 
 - `groupadd -g 10001 blocked`
+4. ensure `rsyslog` is installed and enabled
 5. **start** fapolicyd
 6. call boo with systemctl
 - `systemctl start boo`
