@@ -54,7 +54,7 @@ jobs:
       - name: Archive RPMs
         uses: actions/upload-artifact@v2
         with:
-          name: fapolicy-analyzer-rpms
+          name: example-fapolicyd-deny-shell
           path: |
             /tmp/*.rpm
 
