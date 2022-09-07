@@ -30,9 +30,10 @@ jobs:
           && printf "[rocky-$RELEASE-appstream]\nname=Rocky Linux $RELEASE - AppStream\nbaseurl=http://dl.rockylinux.org/pub/rocky/$RELEASE/AppStream/x86_64/os/\ngpgcheck=1\nenabled=1\ngpgkey=https://dl.rockylinux.org/pub/rocky/$RELEASE/AppStream/x86_64/os/RPM-GPG-KEY-rockyofficial\nincludepkgs=rpmdevtools,dbus-devel\n" > /etc/yum.repos.d/Rocky-"$RELEASE"-AppStream.repo \
           || true
 
-      - name: Install basic rpmbuild toolchain
+      - name: Install toolchain
         run: |
-          dnf install -y git rpm-build rpmdevtools dnf-plugins-core python3-pip cmake
+          dnf groupinstall -y "Development Tools"
+          dnf install -y cmake rpm-build rpmdevtools dnf-plugins-core
 
       - uses: actions/checkout@v2
         with:
